@@ -1,0 +1,1278 @@
+:root {
+    --bg-white: #ffffff;
+    --bg-dark: #111111;
+    --text-dark: #1a1a1a;
+    --text-light: #f5f5f5;
+    --text-gray: #666666;
+    --font-main: 'Manrope', sans-serif;
+    --border-light: rgba(0,0,0,0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+iframe { border: 0; display: block; }
+
+/* =========================================
+   1. HEADER & NAVIGATION
+   ========================================= */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid var(--border-light);
+    height: 80px;
+}
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.logo-main {
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.logo-sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    color: #242424;
+    letter-spacing: 3px;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
+/* Κουμπί MENU */
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    outline: none;
+    padding: 10px;
+}
+
+.menu-text {
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #000;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #000;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* OVERLAY MENU */
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s ease-in-out;
+}
+
+.overlay-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.overlay-menu nav a {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 15px 0;
+    color: #000;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.overlay-menu nav a:hover {
+    color: var(--text-gray);
+}
+
+.close-menu {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: #000;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* =========================================
+   2. HERO SECTION
+   ========================================= */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 80px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    line-height: 1.1;
+}
+
+.btn-line {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   3. PARTNERS SECTION
+   ========================================= */
+.partners-section {
+    padding: 90px 0; /* Λίγο περισσότερος αέρας */
+    background: #ffffff; /* Καθαρό λευκό φόντο */
+    border-bottom: 1px solid var(--border-light);
+    text-align: center;
+}
+
+.section-label-center {
+    display: block;
+    font-size: 0.75rem; /* Μικρό και διακριτικό */
+    font-weight: 700;
+    letter-spacing: 3px; /* Μεγάλα κενά στα γράμματα */
+    margin-bottom: 60px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.partners-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Μεγάλα κενά ανάμεσα στα ονόματα */
+    gap: 40px 80px; 
+}
+
+.partner-item {
+    font-family: 'Manrope', sans-serif;
+    font-size: 2.2rem; /* Μεγάλα, επιβλητικά γράμματα */
+    font-weight: 800; /* Extra Bold */
+    color: #e0e0e0; /* Πολύ ανοιχτό γκρι αρχικά */
+    cursor: default;
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Ομαλή κίνηση */
+    user-select: none; /* Να μην επιλέγεται το κείμενο */
+}
+
+/* Hover Effect: Γίνεται μαύρο και μεγαλώνει ελάχιστα */
+.partner-item:hover {
+    color: #111; 
+    transform: scale(1.2); /* Ελαφρύ zoom */
+    
+}
+
+/* =========================================
+   4. SPLIT SECTIONS (Text + Image)
+   ========================================= */
+.split-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 600px;
+}
+
+.split-text {
+    flex: 1;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    min-width: 300px;
+}
+
+.split-image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-width: 300px;
+    min-height: 400px; 
+}
+
+.section-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-gray);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.split-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.split-text p {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.link-arrow {
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Stats Row */
+.stats-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+.stat strong { display: block; font-size: 2rem; color: #000; font-weight: 800; }
+.stat span { font-size: 0.8rem; color: #777; letter-spacing: 1px; }
+
+/* Dark Background Variant */
+.split-text.bg-dark {
+    background: var(--bg-dark);
+    color: #fff;
+}
+.split-text.bg-dark h2, 
+.split-text.bg-dark strong { color: #fff; }
+.split-text.bg-dark p, 
+.split-text.bg-dark span { color: #aaa; }
+.split-text.bg-dark .link-arrow { color: #fff; }
+
+/* =========================================
+   5. SYSTEMS & PRODUCTS
+   ========================================= */
+.products-section {
+    padding: 100px 0;
+    background: #fff;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+    font-weight: 800;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+.product-card {
+    padding: 30px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+.product-card:hover {
+    border-color: #eee;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.p-cat {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #999;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+.product-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
+.product-card p { color: var(--text-gray); margin-bottom: 20px; font-size: 0.95rem; }
+.read-more { font-size: 0.8rem; font-weight: 800; border-bottom: 2px solid #eee; padding-bottom: 3px; }
+
+/* =========================================
+   6. PROJECTS SLIDER
+   ========================================= */
+.slider-section {
+    width: 100%;
+    padding: 100px 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.swiper {
+    width: 100%;
+    height: 500px;
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: #eee; 
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: #fff;
+    padding: 20px 30px;
+    max-width: 80%;
+}
+.slide-caption h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.slide-caption p { margin: 0; color: #777; font-size: 0.85rem; }
+
+/* =========================================
+   PREMIUM DARK REVIEWS STYLE
+   ========================================= */
+
+.reviews-section-light {
+    background-color: #f8f9fa; /* Πολύ απαλό γκρι φόντο */
+    padding: 100px 0;
+}
+
+.review-header-group {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.review-big-score {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+    color: #1a1a1a; /* Σκούρο γκρι */
+}
+
+.review-sub-text {
+    color: #666;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.google-btn-clean {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    color: #333;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.google-btn-clean:hover {
+    background-color: #1a1a1a; /* Γίνεται μαύρο στο hover */
+    color: #fff;
+    border-color: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+.reviews-grid-clean {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ΛΕΥΚΕΣ ΚΑΡΤΕΣ */
+.review-card-clean {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px; /* Στρογγυλεμένες γωνίες */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Απαλή σκιά */
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.review-card-clean:hover {
+    transform: translateY(-5px); /* Ανεβαίνει λίγο */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: #eee;
+}
+
+.review-stars-gold {
+    color: #fbbc04; /* Google Yellow/Gold */
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.review-body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #444; /* Γκρι κειμένου */
+    margin-bottom: 30px;
+    min-height: 80px; /* Για να είναι όλες οι κάρτες περίπου ίδιο ύψος */
+}
+
+.reviewer-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.reviewer-initial {
+    width: 40px;
+    height: 40px;
+    background: #f0f0f0;
+    color: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.reviewer-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000;
+    display: block;
+}
+
+.review-date {
+    font-size: 0.75rem;
+    color: #888;
+    display: block;
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+.site-footer {
+    background: #111;
+    color: #fff;
+    padding: 80px 0 30px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+}
+.footer-col h4 { font-size: 0.8rem; color: #777; letter-spacing: 2px; margin-bottom: 25px; }
+.footer-col a, .footer-col p { color: #fff; display: block; margin-bottom: 10px; font-weight: 300; }
+.footer-col a:hover { color: #ccc; }
+.footer-bottom { border-top: 1px solid #333; padding-top: 30px; text-align: center; font-size: 0.8rem; color: #555; }
+
+/* =========================================
+   PROJECTS PAGE STYLES (New Grid & Filters)
+   ========================================= */
+
+/* Κουμπιά Φίλτρων */
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0 15px;
+    cursor: pointer;
+    color: #999;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+}
+
+.filter-btn.active, 
+.filter-btn:hover {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+/* Gallery Grid System */
+.gallery-grid {
+    display: grid;
+    /* Αυτόματη προσαρμογή στηλών ανάλογα με το πλάτος */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 400px; /* Σταθερό ύψος για ομοιομορφία */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Το μαύρο φίλτρο με τα γράμματα */
+.gallery-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: 0.4s ease;
+    padding: 20px;
+}
+
+/* Εφέ όταν περνάει το ποντίκι */
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1); /* Zoom effect */
+}
+
+/* Κείμενα μέσα στο Grid */
+.project-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    transform: translateY(20px);
+    transition: 0.4s ease;
+}
+
+.project-desc {
+    color: #ddd;
+    font-size: 0.9rem;
+    transform: translateY(20px);
+    transition: 0.4s ease 0.1s; /* Καθυστέρηση */
+}
+
+.gallery-item:hover .project-title,
+.gallery-item:hover .project-desc {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   CONTACT PAGE STYLES
+   ========================================= */
+
+.contact-info-box {
+    margin-bottom: 50px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    flex-shrink: 0; /* Να μην συρρικνώνεται */
+}
+
+.c-text h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.c-text p, .c-text a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.4;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px 0; /* Μόνο κάτω γραμμή */
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    color: #000;
+    transition: 0.3s;
+    border-radius: 0; /* Όχι στρογγυλεμένες γωνίες */
+}
+
+.form-control:focus {
+    outline: none;
+    border-bottom-color: #000; /* Μαύρη γραμμή όταν γράφεις */
+}
+
+.submit-btn {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+/* Map specific styling within split section */
+.split-map {
+    flex: 1;
+    min-height: 600px;
+    background: #eee;
+    position: relative;
+}
+
+.split-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(100%); /* Ασπρόμαυρος χάρτης */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+    .split-map {
+        min-height: 400px;
+    }
+}
+
+/* Προσαρμογή για κινητά */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Μια στήλη στα κινητά */
+    }
+    .filter-btn {
+        margin: 0 8px;
+        font-size: 0.8rem;
+    }
+    .gallery-item {
+        height: 300px; /* Λίγο πιο χαμηλά στα κινητά */
+    }
+}
+
+
+
+/* =========================================
+   9. RESPONSIVE / MEDIA QUERIES
+   ========================================= */
+
+/* Tablet & Mobile Header Adjustments */
+@media (max-width: 900px) {
+    .site-header { padding: 15px 20px; }
+    
+    .menu-text, .desktop-only { display: none; }
+    
+    .hero-title { font-size: 2.5rem; }
+    
+    /* Layout Breaks */
+    .split-section { flex-direction: column; }
+    .inverted { flex-direction: column-reverse; }
+
+    .split-image {
+        width: 100%;
+        height: 350px;
+        min-height: 350px;
+    }
+    
+    .split-text { padding: 50px 20px; }
+    
+    .swiper { height: 400px; }
+}
+
+/* Smaller Mobile Adjustments */
+@media (max-width: 768px) {
+    .logo-main { font-size: 1.5rem; }
+    .logo-sub { font-size: 0.5rem; letter-spacing: 2px; }
+}
+
+/* Partner Logos on Mobile */
+@media (max-width: 768px) {
+    .partners-list {
+        flex-direction: column; /* Κάθετη διάταξη στα κινητά */
+        gap: 30px;
+    }
+    .partner-item {
+        font-size: 1.8rem; /* Λίγο μικρότερα για να χωράνε */
+    }
+}
+
+/* Cookie Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    transform: translateY(100%); /* Αρχικά κρυμμένο */
+    transition: transform 0.3s ease-in-out;
+}
+
+.cookie-banner.show {
+    transform: translateY(0); /* Εμφάνιση */
+}
+
+.cookie-banner p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.cookie-banner a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.cookie-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.cookie-btn:hover {
+    background: #ccc;
+}
+
+@media (max-width: 768px) {
+    .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Hero premium center */
+.hero-center{
+    position: relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    min-height: 88vh;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero-content-center{
+    position:relative;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 18px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top: 28px;
+}
+
+.btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 22px;
+    border-radius:999px;
+    background:#fff;
+    color:#111;
+    font-weight:800;
+    letter-spacing:0.5px;
+    text-decoration:none;
+    border:1px solid rgba(255,255,255,0.35);
+    transition:transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-primary:hover{
+    transform:translateY(-1px);
+    opacity:0.95;
+}
+
+.hero-mini{
+    margin-top: 18px;
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    flex-wrap:wrap;
+    color: rgba(255,255,255,0.85);
+    font-weight:600;
+    font-size: 0.95rem;
+}
+
+.hero-mini i{
+    margin-right: 8px;
+}
+
+.hero-call-center{
+    margin-top: 18px;
+}
+
+.hero-call-link{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:rgba(255,255,255,0.9);
+    text-decoration:none;
+    font-weight:700;
+    border-bottom:1px solid rgba(255,255,255,0.25);
+    padding-bottom:4px;
+}
+
+.hero-call-link:hover{
+    color:#fff;
+}
+
+/* Trust strip */
+.trust-strip{
+    background:#0f0f0f;
+    padding:18px 0;
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:14px;
+    align-items:center;
+}
+
+.trust-item{
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:14px 10px;
+}
+
+.trust-number{
+    display:block;
+    font-weight:800;
+    color:#fff;
+    font-size:1.05rem;
+    letter-spacing:0.3px;
+}
+
+.trust-label{
+    display:block;
+    margin-top:6px;
+    color:rgba(255,255,255,0.7);
+    font-size:0.95rem;
+}
+
+@media (max-width: 900px){
+    .trust-grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+/* Clean list */
+.clean-list{
+    margin: 18px 0 28px;
+    padding-left:0;
+    list-style:none;
+    color: var(--text-gray);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.clean-list i{
+    margin-right:10px;
+}
+
+/* Mini links */
+.mini-link{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top: 14px;
+    text-decoration:none;
+    color:#111;
+    font-weight:700;
+    opacity:0.85;
+}
+
+.mini-link:hover{
+    opacity:1;
+}
+
+/* Final CTA */
+.final-cta{
+    padding: 70px 0;
+    background:#0f0f0f;
+}
+
+.final-cta-box{
+    display:flex;
+    gap:30px;
+    align-items:center;
+    justify-content:space-between;
+    padding: 34px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
+}
+
+.final-cta-box h2{
+    color:#fff;
+    margin: 10px 0 10px;
+}
+
+.final-cta-box p{
+    color: rgba(255,255,255,0.75);
+    max-width: 680px;
+}
+
+.final-cta-actions{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+
+.btn-primary.dark{
+    background:#fff;
+    color:#111;
+}
+
+.btn-line.dark{
+    color:#fff;
+    border-color: rgba(255,255,255,0.65);
+}
+
+@media (max-width: 900px){
+    .final-cta-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    .final-cta-actions{
+        justify-content:flex-start;
+    }
+}
+
+/* =========================
+   INTRO LOGO ANIMATION
+========================= */
+html.is-loading body{
+  overflow: hidden;
+}
+
+/* Κρύβουμε προσωρινά όλο το περιεχόμενο (εκτός intro) */
+html.is-loading header,
+html.is-loading main,
+html.is-loading section,
+html.is-loading footer{
+  opacity: 0;
+}
+
+/* Αν δεν έχεις <main>, το παραπάνω δεν πειράζει. */
+
+.intro{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #fff; /* άλλαξε σε #0f0f0f αν θες μαύρο intro */
+}
+
+.intro-logo{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* Λίγο πιο “hero” στην αρχή */
+.intro-logo .logo-main{
+  font-size: 38px;
+  letter-spacing: 1px;
+}
+
+.intro-logo .logo-sub{
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+/* όταν τελειώσει η μετάβαση */
+.intro.is-done{
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 700ms ease;
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+.reveal{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 650ms ease, transform 650ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal.in-view{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Αν κάποιος έχει reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .reveal{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .intro{
+    display: none !important;
+  }
+  html.is-loading header,
+  html.is-loading main,
+  html.is-loading section,
+  html.is-loading footer{
+    opacity: 1 !important;
+  }
+}
+
+.product-card.reveal,
+.trust-item.reveal,
+.review-card-clean.reveal{
+  transition-delay: 80ms;
+}
+
+
+/* =========================================
+   TRANSPARENT HEADER (HOME PAGE ONLY)
+   ========================================= */
+body.home-page .site-header {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background 0.4s ease, border-bottom 0.4s ease, box-shadow 0.4s ease;
+}
+
+body.home-page .site-header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Όταν το μενού είναι διάφανο, κάνουμε τα γράμματα Λευκά */
+body.home-page .site-header:not(.scrolled) .logo-main,
+body.home-page .site-header:not(.scrolled) .menu-text,
+body.home-page .site-header:not(.scrolled) .contact-link {
+    color: #fff;
+}
+
+body.home-page .site-header:not(.scrolled) .logo-sub {
+    color: rgba(255,255,255,0.8);
+}
+
+body.home-page .site-header:not(.scrolled) .hamburger-icon span {
+    background: #fff;
+}
+
+/* HERO SLIDER BG */
+.heroSwiper .bg-slide {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================================
+   LANGUAGE SWITCHER BUTTON
+   ========================================= */
+.lang-btn {
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    padding: 6px 10px;
+    border: 1px solid currentColor; /* Παίρνει αυτόματα το χρώμα του header (μαύρο ή λευκό) */
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect - αντιστροφή χρωμάτων */
+.lang-btn:hover {
+    background-color: currentColor;
+}
+
+/* Όταν το Header είναι ΛΕΥΚΟ (μαύρα γράμματα) */
+.site-header .lang-btn:hover {
+    color: #fff;
+}
+
+/* Όταν το Header είναι ΔΙΑΦΑΝΟ (αρχική σελίδα, λευκά γράμματα) */
+body.home-page .site-header:not(.scrolled) .lang-btn {
+    color: #fff;
+}
+
+body.home-page .site-header:not(.scrolled) .lang-btn:hover {
+    background-color: #fff;
+    color: #000 !important;
+}
