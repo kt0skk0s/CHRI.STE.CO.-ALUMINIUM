@@ -14,7 +14,7 @@ function toggleMenu() {
 if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
 if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
 
-// Κλείσιμο όταν πατάμε κάποιο link
+
 menuLinks.forEach(link => {
   link.addEventListener('click', () => {
     if (!overlayMenu) return;
@@ -27,7 +27,7 @@ menuLinks.forEach(link => {
 // SWIPER INITIALIZATION
 // =============================
 if (document.querySelector(".mySwiper") && typeof Swiper !== "undefined") {
-  // eslint-disable-next-line no-undef
+  
   new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -87,17 +87,14 @@ window.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  // 1) Περιμένουμε fonts (σταθεροποιεί widths/heights)
   try {
     if (document.fonts && document.fonts.ready) {
       await document.fonts.ready;
     }
   } catch (_) {}
 
-  // 2) Περιμένουμε λίγο ακόμα για layout stability (header, images)
   await new Promise(r => setTimeout(r, 200));
 
-  // 3) Μετράμε αφού είναι σταθερό
   requestAnimationFrame(() => {
   const targetRect = headerLogo.getBoundingClientRect();
   const introRect = introLogo.getBoundingClientRect();
@@ -111,14 +108,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   const dx = targetCenterX - introCenterX;
   const dy = targetCenterY - introCenterY;
 
-  // 🔥 ΥΠΟΛΟΓΙΣΜΟΣ SCALE
   const scaleX = targetRect.width / introRect.width;
   const scaleY = targetRect.height / introRect.height;
 
-  // Παίρνουμε το μικρότερο για να μη παραμορφωθεί
   const finalScale = Math.min(scaleX, scaleY);
 
-  // Μικρό pop
   introLogo.style.transform = 'scale(1.15)';
   introLogo.style.transition = 'transform 300ms ease';
 
@@ -148,7 +142,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 window.addEventListener('DOMContentLoaded', () => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  // Μην κάνουμε reveal στο intro overlay
   const selector = [
     'section',
     '.product-card',
@@ -157,7 +150,8 @@ window.addEventListener('DOMContentLoaded', () => {
     '.split-text',
     '.split-image',
     '.partner-item',
-    '.footer-col'
+    '.footer-col',
+    '.gallery-item' 
   ].join(',');
 
   const elements = Array.from(document.querySelectorAll(selector))
@@ -166,10 +160,11 @@ window.addEventListener('DOMContentLoaded', () => {
   elements.forEach((el, i) => {
     el.classList.add('reveal');
 
-    // optional stagger για cards (πολύ subtle)
+    
     if (el.classList.contains('product-card') ||
         el.classList.contains('trust-item') ||
-        el.classList.contains('review-card-clean')) {
+        el.classList.contains('review-card-clean') ||
+        el.classList.contains('gallery-item')) {
       el.style.transitionDelay = `${Math.min(i * 35, 180)}ms`;
     }
   });
@@ -181,8 +176,8 @@ window.addEventListener('DOMContentLoaded', () => {
       obs.unobserve(entry.target);
     });
   }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -10% 0px'
+    threshold: 0.02, 
+    rootMargin: '0px 0px 0px 0px' 
   });
 
   elements.forEach(el => io.observe(el));
@@ -210,9 +205,9 @@ if (document.querySelector(".heroSwiper") && typeof Swiper !== "undefined") {
     new Swiper(".heroSwiper", {
         slidesPerView: 1,
         loop: true,
-        effect: "fade", // Ωραίο fade εφέ αντί για κλασικό slide
+        effect: "fade", 
         autoplay: {
-            delay: 4500, // Αλλάζει κάθε 4.5 δευτερόλεπτα
+            delay: 4500, 
             disableOnInteraction: false,
         },
         speed: 1200,
@@ -230,8 +225,8 @@ if (counters.length > 0) {
                 const counter = entry.target;
                 const target = +counter.getAttribute('data-target');
                 const suffix = counter.getAttribute('data-suffix') || '';
-                const duration = 2000; // 2 δευτερόλεπτα animation
-                const increment = target / (duration / 16); // 60fps
+                const duration = 2000; 
+                const increment = target / (duration / 16); 
                 
                 let current = 0;
                 const updateCounter = () => {
@@ -244,10 +239,10 @@ if (counters.length > 0) {
                     }
                 };
                 updateCounter();
-                observer.unobserve(counter); // Σταματάει να το παρακολουθεί αφού μετρήσει
+                observer.unobserve(counter); 
             }
         });
-    }, { threshold: 0.5 }); // Ξεκινάει όταν το 50% του στοιχείου φανεί στην οθόνη
+    }, { threshold: 0.5 }); 
 
     counters.forEach(counter => counterObserver.observe(counter));
 }
