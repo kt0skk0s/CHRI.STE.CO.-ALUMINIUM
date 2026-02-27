@@ -1,74 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>https://www.tudomain.com/index.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/index.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>1.00</priority>
    </url>
    <url>
-      <loc>https://www.tudomain.com/about.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/about.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>0.80</priority>
    </url>
    <url>
-      <loc>https://www.tudomain.com/systems.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/systems.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>0.80</priority>
    </url>
    <url>
-      <loc>https://www.tudomain.com/projects.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/projects.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>0.80</priority>
    </url>
    <url>
-      <loc>https://www.tudomain.com/reviews.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/reviews.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>0.60</priority>
    </url>
    <url>
-      <loc>https://www.tudomain.com/contact.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/contact.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>0.80</priority>
-   </url>
-   <url>
-      <loc>https://www.tudomain.com/privacy.html</loc>
-      <lastmod>2026-02-26</lastmod>
-      <priority>0.30</priority>
    </url>
 
    <url>
-      <loc>https://www.tudomain.com/en/index.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/en/index.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>1.00</priority>
    </url>
    <url>
-      <loc>https://www.tudomain.com/en/about.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/en/about.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>0.80</priority>
    </url>
    <url>
-      <loc>https://www.tudomain.com/en/systems.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/en/systems.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>0.80</priority>
    </url>
    <url>
-      <loc>https://www.tudomain.com/en/projects.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/en/projects.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>0.80</priority>
    </url>
    <url>
-      <loc>https://www.tudomain.com/en/reviews.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/en/reviews.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>0.60</priority>
    </url>
    <url>
-      <loc>https://www.tudomain.com/en/contact.html</loc>
-      <lastmod>2026-02-26</lastmod>
+      <loc>https://christeco.com/en/contact.html</loc>
+      <lastmod>2026-02-27</lastmod>
       <priority>0.80</priority>
-   </url>
-   <url>
-      <loc>https://www.tudomain.com/en/privacy.html</loc>
-      <lastmod>2026-02-26</lastmod>
-      <priority>0.30</priority>
    </url>
 </urlset>

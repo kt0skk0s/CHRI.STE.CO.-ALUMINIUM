@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Σελίδα δεν βρέθηκε | CHRI.STE.CO ALUMINIUM</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+    <style>
+        /* Ειδικό CSS μόνο για την 404 για να είναι στο κέντρο της οθόνης */
+        .error-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            padding: 20px;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        .error-text {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .error-sub {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-left">
+            <button class="menu-btn" aria-label="Menu">
+                <span class="menu-text">MENU</span>
+                <div class="hamburger-icon">
+                    <span></span><span></span><span></span>
+                </div>
+            </button>
+        </div>
+
+        <div class="header-center">
+            <a href="/index.html" class="logo-wrapper">
+                <span class="logo-main">CHRI.STE.CO</span>
+                <span class="logo-sub">ALUMINIUM</span>
+            </a>
+        </div>
+
+        <div class="header-right">
+            <a href="tel:+35723822620" class="contact-link">
+                <i class="fas fa-phone"></i> <span class="desktop-only">23 822620</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="overlay-menu">
+        <button class="close-menu">×</button>
+        <nav>
+            <a href="/index.html">ΑΡΧΙΚΗ / HOME</a>
+            <a href="/about.html">Η ΕΤΑΙΡΕΙΑ / COMPANY</a>
+            <a href="/systems.html">ΣΥΣΤΗΜΑΤΑ / SYSTEMS</a>
+            <a href="/projects.html">ΕΡΓΑ / PROJECTS</a>
+            <a href="/contact.html">ΕΠΙΚΟΙΝΩΝΙΑ / CONTACT</a>
+        </nav>
+    </div>
+
+    <div style="padding-top: 80px;"></div> 
+
+    <section class="error-page">
+        <div class="error-code">404</div>
+        <h1 class="error-text">Η σελίδα δεν βρέθηκε<br><span style="font-size: 1.2rem; font-weight: 400;">Page not found</span></h1>
+        <p class="error-sub">
+            Φαίνεται πως η σελίδα που ψάχνετε δεν υπάρχει ή έχει μεταφερθεί.<br>
+            It looks like the page you are looking for does not exist or has been moved.
+        </p>
+        <a href="/index.html" class="btn-primary" style="background: #1a1a1a; color: #fff;">
+            <i class="fas fa-home" style="padding-right: 8px ;"></i> ΕΠΙΣΤΡΟΦΗ ΣΤΗΝ ΑΡΧΙΚΗ
+        </a>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; margin-top: 0;">
+                <p>© 2026 CHRI.STE.CO Aluminium. Developed with precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
